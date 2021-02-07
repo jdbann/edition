@@ -1,6 +1,14 @@
 require "test_helper"
 
 class MessagesControllerTest < ActionDispatch::IntegrationTest
+  context "GET index" do
+    should "respond ok" do
+      get messages_path
+
+      assert_response :ok
+    end
+  end
+
   context "GET new" do
     should "respond ok" do
       get new_message_path

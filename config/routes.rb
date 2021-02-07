@@ -1,3 +1,3 @@
 Rails.application.routes.draw do
-  resources :messages, only: [:new, :create, :show]
+  resources :messages, only: [:index, :new, :create, :show]
 end

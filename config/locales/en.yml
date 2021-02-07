@@ -5,6 +5,8 @@ en:
         create: Create Message
 
   messages:
+    index:
+      title: All Messages
     new:
       title: New Message
     show:

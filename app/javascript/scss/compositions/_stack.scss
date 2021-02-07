@@ -1,5 +1,9 @@
 .stack {
-  --space: 1.5rem;
+  --space: #{map-get($spacing-map, 4)};
+}
+
+.stack-small {
+  --space: #{map-get($spacing-map, 3)};
 }
 
 .stack > * + * {
