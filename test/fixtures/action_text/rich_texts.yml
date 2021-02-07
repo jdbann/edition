@@ -1,0 +1,4 @@
+first_message:
+  record: first (message)
+  name: content
+  body: <p>Posted a first message!</p>
