@@ -3,3 +3,9 @@ en:
     submit:
       message:
         create: Create Message
+
+  messages:
+    new:
+      title: New Message
+    show:
+      title: View Message

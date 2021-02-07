@@ -1,0 +1,13 @@
+.stack {
+  --space: 1.5rem;
+}
+
+.stack > * + * {
+  margin-top: var(--space);
+}
+
+/* Rails adds a hidden input to the top of each form */
+/* We do not want a margin for this */
+.stack > [type="hidden"] + * {
+  margin-top: 0;
+}

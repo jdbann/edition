@@ -1,6 +1,10 @@
-<%= form_with model: @message do |form| %>
-  <%= form.label :content %>
-  <%= form.rich_text_area :content %>
+<h1><%= t(".title") %></h1>
+
+<%= form_with model: @message, class: "stack" do |form| %>
+  <div>
+    <%= form.label :content %>
+    <%= form.rich_text_area :content %>
+  </div>
 
   <%= form.submit %>
 <% end %>
