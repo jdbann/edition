@@ -7,3 +7,7 @@ Run `bin/setup`.
 ## Run locally
 
 Run `bin/run`.
+
+## Testing
+
+Run `bin/ci`.
