@@ -18,5 +18,10 @@ module Edition
     #
     # config.time_zone = "Central Time (US & Canada)"
     # config.eager_load_paths << Rails.root.join("extras")
+
+    config.generators do |generators|
+      # Default primary keys to uuids
+      generators.orm :active_record, primary_key_type: :uuid
+    end
   end
 end
