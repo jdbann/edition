@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     @session = Session.new(session_params)
 
     if @session.valid?
-      session[:current_account_id] = @session.account.id
+      set_current_account(@session.account)
       redirect_to root_path
     else
       render :new

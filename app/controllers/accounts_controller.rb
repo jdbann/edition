@@ -7,7 +7,7 @@ class AccountsController < ApplicationController
     @account = Account.new(account_params)
 
     if @account.save
-      session[:current_account_id] = @account.id
+      set_current_account(@account)
       redirect_to root_path
     else
       render :new

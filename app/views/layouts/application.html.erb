@@ -17,8 +17,8 @@
 
         <div class="cluster">
           <div>
-            <% if current_account.present? %>
-              <span><%= current_account.email %></span>
+            <% if Current.account.present? %>
+              <span><%= Current.account.email %></span>
             <% else %>
               <%= link_to t(".new_session_link"), new_session_path %>
               <%= link_to t(".new_account_link"), new_account_path %>
