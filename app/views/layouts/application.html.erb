@@ -15,12 +15,15 @@
       <div>
         <%= link_to t("application.name"), root_path %>
 
-        <div>
-          <% if current_account.present? %>
-            <%= current_account.email %>
-          <% else %>
-            <%= link_to t(".new_account_link"), new_account_path %>
-          <% end %>
+        <div class="cluster">
+          <div>
+            <% if current_account.present? %>
+              <span><%= current_account.email %></span>
+            <% else %>
+              <%= link_to t(".new_session_link"), new_session_path %>
+              <%= link_to t(".new_account_link"), new_account_path %>
+            <% end %>
+          </div>
         </div>
       </div>
     </header>

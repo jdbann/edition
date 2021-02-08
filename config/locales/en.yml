@@ -2,6 +2,11 @@ en:
   application:
     name: Edition
 
+  activemodel:
+    errors:
+      messages:
+        email_and_password_not_recognised: This email address and password combination is not recognised.
+
   helpers:
     submit:
       account:
@@ -9,10 +14,13 @@ en:
       message:
         create: Create Message
         update: Update Message
+      session:
+        create: Log in
 
   layouts:
     application:
       new_account_link: New Account
+      new_session_link: Log in
 
   accounts:
     new:
@@ -31,3 +39,8 @@ en:
     message:
       delete_button: Delete Message
       edit_link: Edit Message
+
+  sessions:
+    new:
+      title: Log in
+
