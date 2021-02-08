@@ -1,9 +1,22 @@
 en:
+  application:
+    name: Edition
+
   helpers:
     submit:
+      account:
+        create: Create Account
       message:
         create: Create Message
         update: Update Message
+
+  layouts:
+    application:
+      new_account_link: New Account
+
+  accounts:
+    new:
+      title: New Account
 
   messages:
     index:

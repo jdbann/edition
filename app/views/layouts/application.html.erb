@@ -11,6 +11,20 @@
   </head>
 
   <body class="sans-serif">
+    <header class="centre cluster | cluster-space | mw-7 p-4">
+      <div>
+        <%= link_to t("application.name"), root_path %>
+
+        <div>
+          <% if current_account.present? %>
+            <%= current_account.email %>
+          <% else %>
+            <%= link_to t(".new_account_link"), new_account_path %>
+          <% end %>
+        </div>
+      </div>
+    </header>
+
     <main class="centre stack | mw-7 p-4">
       <%= yield %>
     </main>

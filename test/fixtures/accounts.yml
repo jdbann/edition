@@ -1,0 +1,3 @@
+john:
+  email: john@bannister.com
+  password_digest: <%= BCrypt::Password.create('password') %>
