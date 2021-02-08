@@ -2,6 +2,7 @@ require "application_system_test_case"
 
 class MessagesTest < ApplicationSystemTestCase
   test "creating a message" do
+    log_in_as accounts(:john)
     visit messages_path
 
     click_on I18n.t("messages.index.new_link")
@@ -12,6 +13,7 @@ class MessagesTest < ApplicationSystemTestCase
   end
 
   test "editing a message" do
+    log_in_as accounts(:john)
     message = messages(:first)
 
     visit message_path(message)
@@ -23,6 +25,7 @@ class MessagesTest < ApplicationSystemTestCase
   end
 
   test "deleting a message" do
+    log_in_as accounts(:john)
     message = messages(:first)
     message_content = message.content.to_plain_text
 

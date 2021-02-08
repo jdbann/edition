@@ -3,6 +3,7 @@ module Authentication
 
   included do
     before_action :setup_authentication
+    before_action :authenticate
   end
 
   private
@@ -13,6 +14,10 @@ module Authentication
     if Current.account.blank?
       clear_current_account
     end
+  end
+
+  def authenticate
+    redirect_to new_session_path unless Current.account.present?
   end
 
   def set_current_account(account)

@@ -1,4 +1,6 @@
 class AccountsController < ApplicationController
+  skip_before_action :authenticate
+
   def new
     @account = Account.new
   end
