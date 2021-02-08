@@ -46,4 +46,43 @@ class MessagesControllerTest < ActionDispatch::IntegrationTest
       assert_response :ok
     end
   end
+
+  context "GET edit" do
+    should "respond ok" do
+      get edit_message_path(messages(:first))
+
+      assert_response :ok
+    end
+  end
+
+  context "PATCH update" do
+    should "render edit with invalid params" do
+      invalid_params = {message: {content: ""}}
+
+      patch message_path(messages(:first)), params: invalid_params
+
+      assert_template "messages/edit"
+    end
+
+    should "redirect to updated message with valid params" do
+      message = messages(:first)
+      valid_params = {message: {content: "Updated message"}}
+
+      assert_changes -> { message.reload.content.to_plain_text } do
+        patch message_path(message), params: valid_params
+      end
+
+      assert_redirected_to message_path(message)
+    end
+  end
+
+  context "DELETE destroy" do
+    should "redirect to index" do
+      assert_changes -> { Message.count } do
+        delete message_path(messages(:first))
+      end
+
+      assert_redirected_to messages_path
+    end
+  end
 end

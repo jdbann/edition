@@ -3,11 +3,18 @@ en:
     submit:
       message:
         create: Create Message
+        update: Update Message
 
   messages:
     index:
+      new_link: New Message
       title: All Messages
     new:
       title: New Message
     show:
       title: View Message
+    edit:
+      title: Edit Message
+    message:
+      delete_button: Delete Message
+      edit_link: Edit Message

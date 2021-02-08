@@ -1,13 +1,13 @@
 .stack {
-  --space: #{map-get($spacing-map, 4)};
+  --stack-space: #{map-get($spacing-map, 4)};
 }
 
 .stack-small {
-  --space: #{map-get($spacing-map, 3)};
+  --stack-space: #{map-get($spacing-map, 3)};
 }
 
 .stack > * + * {
-  margin-top: var(--space);
+  margin-top: var(--stack-space);
 }
 
 /* Rails adds a hidden input to the top of each form */
