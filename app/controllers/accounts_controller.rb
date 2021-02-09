@@ -3,10 +3,12 @@ class AccountsController < ApplicationController
 
   def new
     @account = Account.new
+    authorise @account
   end
 
   def create
     @account = Account.new(account_params)
+    authorise @account
 
     if @account.save
       set_current_account(@account)

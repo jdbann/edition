@@ -3,10 +3,12 @@ class SessionsController < ApplicationController
 
   def new
     @session = Session.new
+    authorise @session
   end
 
   def create
     @session = Session.new(session_params)
+    authorise @session
 
     if @session.valid?
       set_current_account(@session.account)

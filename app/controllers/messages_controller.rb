@@ -1,6 +1,7 @@
 class MessagesController < ApplicationController
   def new
     @message = Message.new
+    authorise @message
   end
 
   def create
@@ -8,6 +9,7 @@ class MessagesController < ApplicationController
     entry = Current.account.entries.new(
       entryable: @message
     )
+    authorise @message
 
     if @message.valid? && entry.save
       redirect_to entry_path(entry)
@@ -18,10 +20,12 @@ class MessagesController < ApplicationController
 
   def edit
     @message = Message.find(params[:id])
+    authorise @message
   end
 
   def update
     @message = Message.find(params[:id])
+    authorise @message
 
     if @message.update(message_params)
       redirect_to entry_path(@message.entry)
