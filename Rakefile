@@ -16,8 +16,7 @@ if Rails.env.development? || Rails.env.test?
 
     desc "Lint the scss files"
     task :scss do
-      output = `yarn run lint:scss`
-      $?.exitstatus.zero? || abort(output)
+      system("yarn run lint:scss") || abort
     end
   end
 end
