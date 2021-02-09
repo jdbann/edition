@@ -1,0 +1,8 @@
+<div class="cluster | cluster-space">
+  <div>
+    <h1><%= t(".title") %></h1>
+    <%= link_to t(".new_message_link"), new_message_path %>
+  </div>
+</div>
+
+<%= render @entries %>

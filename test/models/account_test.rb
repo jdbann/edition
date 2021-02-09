@@ -2,6 +2,7 @@ require "test_helper"
 
 class AccountTest < ActiveSupport::TestCase
   context "associations" do
+    should have_many(:entries)
     should have_secure_password
   end
 

@@ -1,22 +1,6 @@
 require "test_helper"
 
 class MessagesControllerTest < ActionDispatch::IntegrationTest
-  context "GET index" do
-    should "require authentication" do
-      get messages_path
-
-      assert_requires_authentication
-    end
-
-    should "respond ok" do
-      log_in_as accounts(:john)
-
-      get messages_path
-
-      assert_response :ok
-    end
-  end
-
   context "GET new" do
     should "require authentication" do
       get new_message_path
@@ -50,30 +34,15 @@ class MessagesControllerTest < ActionDispatch::IntegrationTest
     end
 
     should "redirect to created message with valid params" do
+      account = accounts(:john)
       valid_params = {message: {content: "A message"}}
-      log_in_as accounts(:john)
+      log_in_as account
 
-      assert_changes -> { Message.count } do
+      assert_changes -> { account.entries.count } do
         post messages_path, params: valid_params
       end
 
-      assert_redirected_to message_path(Message.last)
-    end
-  end
-
-  context "GET show" do
-    should "require authentication" do
-      get message_path(messages(:first))
-
-      assert_requires_authentication
-    end
-
-    should "respond ok" do
-      log_in_as accounts(:john)
-
-      get message_path(messages(:first))
-
-      assert_response :ok
+      assert_redirected_to entry_path(account.entries.last)
     end
   end
 
@@ -118,25 +87,7 @@ class MessagesControllerTest < ActionDispatch::IntegrationTest
         patch message_path(message), params: valid_params
       end
 
-      assert_redirected_to message_path(message)
-    end
-  end
-
-  context "DELETE destroy" do
-    should "require authentication" do
-      delete message_path(messages(:first))
-
-      assert_requires_authentication
-    end
-
-    should "redirect to index" do
-      log_in_as accounts(:john)
-
-      assert_changes -> { Message.count } do
-        delete message_path(messages(:first))
-      end
-
-      assert_redirected_to messages_path
+      assert_redirected_to entry_path(message.entry)
     end
   end
 end

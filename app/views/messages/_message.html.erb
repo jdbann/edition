@@ -3,12 +3,12 @@
 
   <div class="cluster | cluster-space stack-small">
     <div>
-      <small><%= link_to message.created_at.to_s(:long), message %></small>
+      <small><%= link_to message.created_at.to_s(:long), message.entry %></small>
 
       <div class="cluster">
         <div>
           <small><%= link_to t(".edit_link"), edit_message_path(message) %></small>
-          <small><%= button_to t(".delete_button"), message_path(message), method: :delete %></small>
+          <small><%= button_to t(".delete_button"), entry_path(message.entry), method: :delete %></small>
         </div>
       </div>
     </div>

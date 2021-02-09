@@ -26,14 +26,16 @@ en:
     new:
       title: New Account
 
-  messages:
+  entries:
     index:
-      new_link: New Message
-      title: All Messages
+      new_message_link: New Message
+      title: All Entries
+    show:
+      title: View Entry
+
+  messages:
     new:
       title: New Message
-    show:
-      title: View Message
     edit:
       title: Edit Message
     message:
@@ -43,4 +45,3 @@ en:
   sessions:
     new:
       title: Log in
-
