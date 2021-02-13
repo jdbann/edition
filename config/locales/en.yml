@@ -34,15 +34,15 @@ en:
       title: All Entries
     show:
       title: View Entry
+    entry:
+      delete_button: Delete Entry
+      edit_link: Edit Entry
 
   messages:
     new:
       title: New Message
     edit:
       title: Edit Message
-    message:
-      delete_button: Delete Message
-      edit_link: Edit Message
 
   profiles:
     new:

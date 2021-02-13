@@ -1,1 +1,20 @@
-<%= render entry.entryable %>
+<article class="stack | stack-small">
+  <header>
+    <small><%= entry.account.profile.name %></small>
+  </header>
+
+  <%= render entry.entryable %>
+
+  <footer class="cluster | cluster-space">
+    <div>
+      <small><%= link_to entry.created_at.to_s(:long), entry %></small>
+
+      <div class="cluster">
+        <div>
+          <small><%= link_to t(".edit_link"), url_for([:edit, entry.entryable]) %></small>
+          <small><%= button_to t(".delete_button"), entry_path(entry), method: :delete %></small>
+        </div>
+      </div>
+    </div>
+  </footer>
+</article>
