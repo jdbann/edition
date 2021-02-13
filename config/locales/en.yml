@@ -14,6 +14,8 @@ en:
       message:
         create: Create Message
         update: Update Message
+      profile:
+        create: Create Profile
       session:
         create: Log in
 
@@ -41,6 +43,10 @@ en:
     message:
       delete_button: Delete Message
       edit_link: Edit Message
+
+  profiles:
+    new:
+      title: Setup Profile
 
   sessions:
     new:

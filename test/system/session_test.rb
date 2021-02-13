@@ -9,6 +9,6 @@ class SessionsTest < ApplicationSystemTestCase
     fill_in Session.human_attribute_name(:password), with: "password"
     click_button I18n.t("helpers.submit.session.create")
 
-    assert_text "john@bannister.com"
+    assert_logged_in accounts(:john)
   end
 end

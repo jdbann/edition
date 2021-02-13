@@ -2,3 +2,8 @@ first_message:
   record: first (Message)
   name: content
   body: <p>Posted a first message!</p>
+
+john_profile_description:
+  record: john (Profile)
+  name: description
+  body: <p>Notorious person.</p>
