@@ -2,7 +2,7 @@
   --stack-space: #{map-get($spacing-map, 4)};
 }
 
-.stack-small {
+.stack-small > * {
   --stack-space: #{map-get($spacing-map, 3)};
 }
 

@@ -1,6 +1,6 @@
 class EntriesController < ApplicationController
   def index
-    @entries = policy_scope(Entry.all)
+    @entries = policy_scope(Entry.latest_first)
   end
 
   def show
