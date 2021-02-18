@@ -5,7 +5,7 @@
     "lint:scss": "yarn run stylelint \"app/javascript/**/*.scss\""
   },
   "dependencies": {
-    "@rails/actioncable": "^6.0.0",
+    "@rails/actioncable": "^6.1.3",
     "@rails/actiontext": "^6.1.1",
     "@rails/activestorage": "^6.0.0",
     "@rails/ujs": "^6.0.0",
