@@ -34,5 +34,3 @@ group :test do
   gem "shoulda"
   gem "webdrivers"
 end
-
-gem "tzinfo-data", platforms: [:mingw, :mswin, :x64_mingw, :jruby]
