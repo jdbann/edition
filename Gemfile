@@ -12,7 +12,7 @@ gem "puma", "~> 5.0"
 gem "pundit"
 gem "rails"
 gem "sass-rails", ">= 6"
-gem "turbolinks", "~> 5"
+gem "turbo-rails"
 gem "webpacker", "~> 5.0"
 
 group :development, :test do
