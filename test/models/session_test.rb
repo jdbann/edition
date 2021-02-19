@@ -5,10 +5,19 @@ class SessionTest < ActiveSupport::TestCase
     should validate_presence_of(:email)
     should validate_presence_of(:password)
 
-    should "validate password is correct for email address" do
-      invalid_session = Session.new(email: "john@bannister.com", password: "notmypassword")
-      refute_predicate invalid_session, :valid?
+    should "flag a generic error if email is not recognised" do
+      invalid_session = Session.new(email: "not_an_email", password: "password")
+      invalid_session.validate
+      assert_includes invalid_session.errors.full_messages, I18n.t("activemodel.errors.messages.email_and_password_not_recognised")
+    end
 
+    should "flag a generic error if password is not correct for email address" do
+      invalid_session = Session.new(email: "john@bannister.com", password: "notmypassword")
+      invalid_session.validate
+      assert_includes invalid_session.errors.full_messages, I18n.t("activemodel.errors.messages.email_and_password_not_recognised")
+    end
+
+    should "be valid with matching email and password" do
       valid_session = Session.new(email: "john@bannister.com", password: "password")
       assert_predicate valid_session, :valid?
     end

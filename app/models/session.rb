@@ -19,7 +19,7 @@ class Session
   end
 
   def password_is_correct
-    return if account_for_email.blank? || account_for_email.authenticate(password)
+    return if account_for_email.present? && account_for_email.authenticate(password)
 
     errors.add(:base, :email_and_password_not_recognised)
   end
