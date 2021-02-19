@@ -2,6 +2,10 @@ john:
   email: john@bannister.com
   password_digest: <%= BCrypt::Password.create('password') %>
 
+fran:
+  email: fran@allen.com
+  password_digest: <%= BCrypt::Password.create('password') %>
+
 without_profile:
   email: without_profile@edition.test
   password_digest: <%= BCrypt::Password.create('password') %>

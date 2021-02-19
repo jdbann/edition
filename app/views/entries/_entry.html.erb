@@ -1,4 +1,4 @@
-<article class="stack | stack-small">
+<article id="<%= dom_id entry %>" class="stack | stack-small">
   <header>
     <small><%= entry.account.profile.name %></small>
   </header>
@@ -11,8 +11,12 @@
 
       <div class="cluster">
         <div>
-          <small><%= link_to t(".edit_link"), url_for([:edit, entry.entryable]) %></small>
-          <small><%= button_to t(".delete_button"), entry_path(entry), method: :delete %></small>
+          <% if policy(entry).update? %>
+            <small><%= link_to t(".edit_link"), url_for([:edit, entry.entryable]) %></small>
+          <% end %>
+          <% if policy(entry).destroy? %>
+            <small><%= button_to t(".delete_button"), entry_path(entry), method: :delete %></small>
+          <% end %>
         </div>
       </div>
     </div>

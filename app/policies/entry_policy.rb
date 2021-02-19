@@ -9,6 +9,10 @@ class EntryPolicy < ApplicationPolicy
     true
   end
 
+  def update?
+    Pundit.policy(account, record.entryable).update?
+  end
+
   def destroy?
     record.account == account
   end

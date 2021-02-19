@@ -34,4 +34,15 @@ class MessagesTest < ApplicationSystemTestCase
 
     refute_text message_content
   end
+
+  test "hiding edit and delete controls" do
+    log_in_as accounts(:john)
+
+    visit entries_path
+
+    within id: dom_id(entries(:fran)) do
+      refute_text I18n.t("entries.entry.edit_link")
+      refute_text I18n.t("entries.entry.delete_button")
+    end
+  end
 end

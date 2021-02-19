@@ -1,3 +1,11 @@
 first:
   account: john
   entryable: first (Message)
+
+second:
+  account: john
+  entryable: second (Message)
+
+fran:
+  account: fran
+  entryable: fran (Message)

@@ -3,6 +3,16 @@ first_message:
   name: content
   body: <p>Posted a first message!</p>
 
+second_message:
+  record: second (Message)
+  name: content
+  body: <p>And here I am writing about all kinds of things again.</p>
+
+fran_message:
+  record: fran (Message)
+  name: content
+  body: <p>Now we have a message from a different account.<p>
+
 john_profile_description:
   record: john (Profile)
   name: description

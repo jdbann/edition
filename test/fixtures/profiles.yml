@@ -1,3 +1,7 @@
 john:
   name: John Bannister
   account: john
+
+fran:
+  name: Fran Allen
+  account: fran
