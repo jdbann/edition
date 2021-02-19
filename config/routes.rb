@@ -7,4 +7,5 @@ Rails.application.routes.draw do
 
   resources :entries, only: [:index, :show, :destroy]
   resources :messages, only: [:new, :create, :edit, :update]
+  resources :people, only: :show
 end

@@ -1,6 +1,6 @@
 <article id="<%= dom_id entry %>" class="stack | stack-small">
   <header>
-    <small><%= entry.account.profile.name %></small>
+    <small><%= link_to entry.account.profile.name, person_path(entry.account) %></small>
   </header>
 
   <%= render entry.entryable %>
