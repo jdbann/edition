@@ -13,7 +13,7 @@ gem "pundit"
 gem "rails"
 gem "sass-rails", ">= 6"
 gem "turbo-rails"
-gem "webpacker", "~> 5.0"
+gem "webpacker", "~> 5.4"
 
 group :development, :test do
   gem "byebug", platforms: [:mri, :mingw, :x64_mingw]
